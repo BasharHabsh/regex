@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Extractor</title>
+</head>
+
+<body>
+    <h1>Link Extractor</h1>
+    <h2> Here are some example links:</h2>
+    <p id="content">
+        <a href="https://www.facebook.com/">Facebook Website</a>
+        and
+        <a href="https://www.whatsapp.com/">Whatsapp Website</a>
+        and
+        <a href="https://www.instagram.com/">Instagram Website</a>
+        and
+        <a href="https://www.twitter.com/">Twitter Website</a>
+        and
+        <a href="https://www.linkedin.com/">LinkedIn Website</a>
+        and
+        <a href="https://www.youtube.com/">Youtube Website</a>
+        and
+        <a href="https://www.google.com/">Google Website</a>
+        and
+        <a href="https://www.github.com/">Github Website</a>
+    </p>
+
+    <script>
+
+        function extractUrls(text) {
+            var urlRegex = /(https?:\/\/[^\s]+)/g
+            return text.match(urlRegex)
+        }
+
+        var pageText = document.getElementById("content").innerHTML
+        var urls = extractUrls(pageText)
+
+        console.log(urls);
+
+    </script>
+</body>
+
+</html>
